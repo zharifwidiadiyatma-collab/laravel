@@ -9,5 +9,6 @@ class UserController extends Controller
     public function hello()
     {
         return "Hello, World saya dari controller";
+        
     }
 }
