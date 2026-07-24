@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\PageController;
+/** 
 Route::get('/', function () {
     echo " Hai, Selamat Datang di Website Laravel";
 });
@@ -12,6 +13,14 @@ Route::get('/about',function () {
 Route::get('/articles/{id}', function ($id) {
     echo "Ini adalah halaman artikel dengan ID : $id";
 } );
+*/
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/articles/{id}', [PageController::class, 'articles']);
+//Route::get('/hello', function () {
+//return view('blog.hello', ['name' => 'Andi']);
+//});
+Route::get('/hello', [UserController::class, 'hello']);
 
 /** 
 Route::get('/hello', function () {
